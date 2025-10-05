@@ -1,0 +1,259 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigator {
+    top: 10px;
+    position: fixed;
+    display: flex;
+    list-style: none;
+    background-color: rgba(26, 26, 26, 0.89);
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.transition-color {
+    color: rgba(167, 167, 167, 0.89);
+    transition: color 0.5s ease-out;
+}
+
+.transition-color:hover {
+    color: rgba(240, 240, 240, 0.945);
+    cursor: pointer;
+}
+
+.inner-div {
+    padding: 5px 15px;
+    margin: 0;
+    border-radius: 20px;
+}
+
+.transition-connect{
+    background-color: rgb(107, 107, 107);
+    color: rgba(243, 243, 243, 0.89);
+    transition: background-color 0.5s ease;
+}
+
+.transition-connect:hover{
+    background-color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.information {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.name {
+    font-size: clamp(6em, 20vw, 16em);
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1; 
+    padding: 0px 30px;
+    margin-bottom: 10px;
+}
+
+.greeting {
+    color: rgba(114, 114, 114, 0.774);
+    padding: 0px 30px;
+    font-size: 2em;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1; 
+}
+
+.about-me {
+    scroll-margin-top: 100px;
+}
+
+.about-me h2{
+    text-align: center;
+    margin-top: 140px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: rgba(37, 37, 37, 0.863);
+    transform: rotate(-2deg);
+    transition: transform 0.2s ease-in;
+    cursor: pointer;
+}
+
+.about {
+    width: 90vw;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px rgba(170, 170, 170, 0.363);
+    outline: 1px solid rgba(224, 224, 224, 0.795);
+    overflow: hidden;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+}
+
+.description{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    color: rgba(99, 99, 99, 0.836);
+}
+
+.my-description{
+    margin-top: auto;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.my-description p{
+    font-size: 2em;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.me-with-guitar{
+    height: 500px;
+    transform: rotate(0deg);
+    transition: transform 0.1s ease-out;
+    cursor: pointer;
+}
+
+.me-with-guitar:hover{
+    transform: rotate(-3deg);
+}
+
+.me-next{
+    transition: transform 0.1s ease-out;
+    transform: rotate(0deg);
+    cursor: pointer;
+}
+
+.me-next:hover{
+    transform: rotate(3deg);
+}
+
+.projects {
+    scroll-margin-top: 100px;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-top: 140px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: rgba(37, 37, 37, 0.863);
+    transform: rotate(-2deg);
+    transition: transform 0.2s ease-in;
+    cursor: pointer;
+}
+
+.showcase {
+    width: 90vw;
+    background-color: rgba(241, 241, 241, 0.705);
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.project-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    color: rgba(10, 10, 10, 0.836);
+}
+
+.project-image {
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: -3px 3px 6px rgb(194, 194, 194);
+    transform: rotate(-2deg);
+    transition: transform 0.2s ease-in;
+}
+
+.project-image:hover {
+    transform: rotate(0deg);
+}
+
+.project-desc {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.project-desc h2 {
+    font-size: 2em;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+.project-desc p {
+    color: rgba(117, 117, 117, 0.836);
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.flappy-bird {
+    width: 600px;
+    
+}
+
+.flappy-bird-desc {
+    text-align: left;
+}
+
+.encode-image img {
+    width: 800px;
+}
