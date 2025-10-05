@@ -18,6 +18,7 @@
     list-style: none;
     background-color: rgba(26, 26, 26, 0.89);
     justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: 500;
     border-radius: 30px;
@@ -26,13 +27,23 @@
     z-index: 1;
 }
 
+.home {
+    fill: #a7a7a7e3;
+    transition: fill 0.5s ease-out;
+}
+
+.home:hover{
+    fill: #f0f0f0f1;
+    cursor: pointer;
+}
+
 .transition-color {
-    color: rgba(167, 167, 167, 0.89);
+    color: #a7a7a7e3;
     transition: color 0.5s ease-out;
 }
 
 .transition-color:hover {
-    color: rgba(240, 240, 240, 0.945);
+    color: #f0f0f0f1;
     cursor: pointer;
 }
 
@@ -62,6 +73,7 @@ header {
 main {
     width: 100vw;
     height: 100vh;
+    flex: 1;
 }
 
 .information {
@@ -96,12 +108,14 @@ main {
 
 .about-me {
     scroll-margin-top: 100px;
+    margin-top: 140px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-me h2{
-    text-align: center;
-    margin-top: 140px;
-    margin-bottom: 40px;
     font-size: 2em;
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
@@ -170,12 +184,14 @@ main {
 
 .projects {
     scroll-margin-top: 100px;
+    margin-top: 140px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects h2 {
-    text-align: center;
-    margin-top: 140px;
-    margin-bottom: 40px;
     font-size: 2em;
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
@@ -256,4 +272,126 @@ main {
 
 .encode-image img {
     width: 800px;
+}
+
+.connect-tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+}
+
+.footer-content {
+    bottom: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.89);
+    color: rgba(167, 167, 167, 0.89);
+    box-shadow: 1px 1px 5px rgb(204, 204, 204);
+    border: 1px solid rgba(160, 160, 160, 0.712);
+    border-radius: 20px;
+    font-size: 1em;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 20px 20px;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.email h2 {
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.836);
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none; 
+}
+
+a {
+    text-decoration: none;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+}
+
+.connect-description {
+    text-align: center;
+    margin: auto;
+}
+
+.connect-description h1{
+    color: rgba(44, 44, 44, 0.863);
+    font-size: 4em;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.connect-description p{
+    color: rgba(100, 100, 100, 0.863);
+    font-family: "Caveat", cursive;
+    font-size: 2em;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0px 50px;
+}
+
+@media(max-width : 1250px) {
+    .project-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-image {
+        margin-bottom: 20px;
+        width: 90%;
+    }
+    .project-desc {
+        text-align: center;
+    }
+
+    .flappy-bird {
+        width: 90%;
+    }
+
+    .encode-image img {
+        width: 90%;
+    }
+}
+
+@media(max-width : 950px) {
+    .description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .my-description p {
+        font-size: 1.5em;
+    }
+    .description img {
+        width: 100%;
+        height: 90%;
+    }
+    .footer-content svg {
+        width: 30px;
+        height: 30px;
+    }
+    .footer-content h2 {
+        font-size: 3vw;
+    }
 }
