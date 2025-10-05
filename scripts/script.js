@@ -1,34 +1,55 @@
 const home = document.querySelector(".home");
 const intro = document.querySelector(".information");
 
-const about = document.querySelector(".about-nav");
+const about = document.querySelectorAll(".about-nav");
 const aboutMe = document.querySelector(".about-me");
 const aboutDiv = document.querySelector(".about");
 
 const projectsDiv = document.querySelector(".showcase");
-const projects = document.querySelector(".projects-nav");
+const projects = document.querySelectorAll(".projects-nav");
 const projectsTab = document.querySelector(".projects");
 
-const connect = document.querySelector(".connect");
+const connect = document.querySelectorAll(".connect");
 const connectTab = document.querySelector(".connect-tab");
 
 const aboutMq = window.matchMedia("(max-width: 950px)");
 const projectsMq = window.matchMedia("(max-width: 1250px)");
 
-about.addEventListener("click", ()=>{
-    aboutMe.scrollIntoView({ behavior: "smooth" });
-})
+const toggleMenu = document.querySelector(".toggle-menu");
+const dropDown = document.querySelector(".drop-down");
+let isDisplay = true
 
-projects.addEventListener("click", ()=>{
-    projectsTab.scrollIntoView({ behavior: "smooth" });
-})
+about.forEach((section) => {
+    section.addEventListener("click", ()=>{
+        aboutMe.scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+projects.forEach((section) => {
+    section.addEventListener("click", ()=>{
+        projectsTab.scrollIntoView({ behavior: "smooth" });
+    });     
+});
+
+connect.forEach((section) => {
+    section.addEventListener("click", ()=>{
+        connectTab.scrollIntoView({ behavior: "smooth" });
+    });     
+});
 
 home.addEventListener("click", ()=>{
     intro.scrollIntoView({ behavior: "smooth" });
 });
 
-connect.addEventListener("click", ()=>{
-    connectTab.scrollIntoView({ behavior: "smooth" });
+toggleMenu.addEventListener("click", ()=>{
+    if(isDisplay) {
+        dropDown.style.display = "flex";
+        isDisplay = false;
+    }
+    else {
+        dropDown.style.display = "none";
+        isDisplay = true;
+    }
 });
 
 function handleAboutMedia(e) {
