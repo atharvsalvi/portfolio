@@ -415,6 +415,9 @@ a {
 }
 
 @media(max-width : 500px) {
+    .name {
+        margin-bottom: 90px;
+    }
     .navigator {
         width: 90%;
         display: flex;
@@ -440,5 +443,14 @@ a {
         background-color: transparent;
         color: #f0f0f0f1;
         cursor: pointer;
+    }
+}
+
+@media(max-height : 600px) {
+    .information {
+        height: 900px;
+    }
+    .connect-tab {
+        height: 600px;
     }
 }
