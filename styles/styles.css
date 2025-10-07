@@ -307,6 +307,7 @@
     text-align: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.89);
     color: rgba(167, 167, 167, 0.89);
@@ -413,7 +414,7 @@ a {
         height: 30px;
     }
     .footer-content h2 {
-        font-size: 25px;
+        font-size: 13px;
     }
 }
 
@@ -447,10 +448,10 @@ a {
         color: #f0f0f0f1;
         cursor: pointer;
     }
-    .email {
+    /* .email {
         border-right: 1px solid rgba(160, 160, 160, 0.712);
         padding-right: 20px;
-    }
+    } */
 }
 
 @media(max-height : 600px) {
@@ -459,5 +460,12 @@ a {
     }
     .connect-tab {
         height: 600px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+    .vertical-bar {
+        border-left: 1px solid rgba(160, 160, 160, 0.712);
+        height: 40px;
     }
 }
