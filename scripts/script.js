@@ -19,6 +19,14 @@ const toggleMenu = document.querySelector(".toggle-menu");
 const dropDown = document.querySelector(".drop-down");
 let isDisplay = true
 
+const ethoImage = document.querySelector(".etho-image");
+const flappyBirdImage = document.querySelector(".flappy-bird-image");
+const encodeImage = document.querySelector(".encode-image");
+
+ethoImage.addEventListener("click", ()=>{
+    window.open("https://github.com/atharvsalvi/etho", "_blank");
+});
+
 about.forEach((section) => {
     section.addEventListener("click", ()=>{
         aboutMe.scrollIntoView({ behavior: "smooth" });

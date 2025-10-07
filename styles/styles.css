@@ -207,6 +207,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .projects h2 {
@@ -244,6 +245,7 @@
     box-shadow: -3px 3px 6px rgb(194, 194, 194);
     transform: rotate(-2deg);
     transition: transform 0.2s ease-in;
+    cursor: pointer;
 }
 
 .project-image:hover {
@@ -342,6 +344,7 @@ a {
 .socials {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .connect-description {
@@ -410,7 +413,7 @@ a {
         height: 30px;
     }
     .footer-content h2 {
-        font-size: 3vw;
+        font-size: 25px;
     }
 }
 
@@ -443,6 +446,10 @@ a {
         background-color: transparent;
         color: #f0f0f0f1;
         cursor: pointer;
+    }
+    .email {
+        border-right: 1px solid rgba(160, 160, 160, 0.712);
+        padding-right: 20px;
     }
 }
 
