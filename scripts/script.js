@@ -102,6 +102,7 @@ function handleAboutMedia(e) {
         `;
     }
 }
+
 window.addEventListener("resize", () => {
     handleAboutMedia(aboutMq);
 });
