@@ -70,7 +70,7 @@ export function HeroSection() {
             style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.85rem", fontWeight: 600 }}
           >
             <div className="w-6 h-6 rounded-full overflow-hidden border border-black/10 flex-shrink-0">
-              <img src="/blog-icon.jpg" alt="Blog Icon" className="w-full h-full object-cover" />
+              <img src={`${import.meta.env.BASE_URL}blog-icon.jpg`} alt="Blog Icon" className="w-full h-full object-cover" />
             </div>
             Blog
             <ArrowUpRight className="w-4 h-4" />
