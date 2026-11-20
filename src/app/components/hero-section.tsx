@@ -81,7 +81,7 @@ export function HeroSection() {
         <div className="flex items-center gap-4 sm:gap-8">
           {/* View Resume button */}
           <motion.a
-            href="https://drive.google.com/file/d/1I85wJDocW3Ex6ezLSDtP3j8HoG2D3sU1/view?usp=sharing"
+            href="https://drive.google.com/file/d/1MPtIq47qHjr4PU6F-d6BbNeS9iTimJN1/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0 }}
