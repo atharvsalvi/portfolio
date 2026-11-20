@@ -17,6 +17,10 @@ function HomePage() {
     // Initialize Lenis
     const lenis = new Lenis({
       duration: 1.2,
+      anchors: {
+        duration: 1.2,
+        immediate: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      },
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
@@ -66,7 +70,7 @@ function HomePage() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/portfolio">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />

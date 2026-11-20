@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
 
 const socials = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/atharv-salvi/" },
@@ -7,63 +6,42 @@ const socials = [
   { name: "Twitter / X", href: "https://x.com/atharvsalvihere" },
   { name: "GitHub", href: "https://github.com/atharvsalvi" },
 ];
+const linkClass = "group font-mono text-[0.85rem] leading-relaxed flex min-h-11 w-fit items-center gap-2 text-white/70 hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
+const labelStyle = { fontFamily: "var(--font-mono)", fontSize: "0.85rem", letterSpacing: "0.12em" };
 
 export function ContactSection() {
   return (
-    <section className="px-6 sm:px-10 md:px-16 lg:px-20 py-20 md:py-32 border-t border-white/10">
-      <div className="max-w-4xl">
-        <p
-          className="text-white/40 mb-3"
-          style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
-        >
-          Get in Touch
-        </p>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "100px" }}
-          transition={{ duration: 0.7 }}
-          className="text-white mb-6"
-          style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2rem, 6vw, 4.5rem)", fontWeight: 400, lineHeight: 1.1 }}
-        >
-          Let's build something great together.
-        </motion.h2>
-        <motion.a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=atharv.salvi22@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "100px" }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="inline-block text-white/50 hover:text-white transition-colors mb-16"
-          style={{ fontFamily: "'Space Mono', monospace", fontSize: "clamp(0.85rem, 2vw, 1.1rem)" }}
-        >
-          atharv.salvi22@gmail.com
-        </motion.a>
+    <section id="contact" aria-labelledby="contact-heading" className="min-h-svh flex flex-col px-6 sm:px-10 md:px-16 lg:px-20 py-8 md:py-12">
+      <div className="pb-12 md:pb-16">
+        <h2 id="contact-heading" className="m-0 max-w-[22ch] text-white" style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(2.5rem, 6.5vw, 7rem)", fontWeight: 500, lineHeight: 1.06, letterSpacing: "-0.055em" }}>
+          Have a project or opportunity in mind?
+        </h2>
+        <p className="mt-6 font-mono text-white/70 text-sm sm:text-base leading-relaxed">I’d love to hear what you’re working on.</p>
+        <p className="mt-4 text-white/50" style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem" }}>Based in Mumbai, India</p>
       </div>
-
-      {/* Socials & Footer */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-8 pt-16 border-t border-white/10">
-        <div className="flex flex-wrap gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-[auto_auto_auto] w-full max-w-4xl gap-x-8 md:gap-x-16 gap-y-10 mt-auto pt-8 md:pt-10 pb-10 text-sm sm:text-base">
+        <nav aria-label="Footer navigation">
+          <h3 className="text-white mb-4" style={labelStyle}>[EXPLORE]</h3>
+          <a href="#projects" className={linkClass}>Work</a>
+          <a href="#about" className={linkClass}>About &amp; Experience</a>
+        </nav>
+        <nav aria-label="Social links">
+          <h3 className="text-white mb-4" style={labelStyle}>[SOCIALS]</h3>
           {socials.map((social) => (
-            <a
-              key={social.name}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-white/40 hover:text-white transition-colors"
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.85rem" }}
-            >
-              {social.name}
-              <ArrowUpRight className="w-3 h-3" />
+            <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+              {social.name}<ArrowUpRight aria-hidden="true" className="w-3 h-3 opacity-60 group-hover:opacity-100" />
             </a>
           ))}
+        </nav>
+        <div className="col-span-2 md:col-span-1 min-w-0">
+          <h3 className="text-white mb-4" style={labelStyle}>[CONTACT]</h3>
+          <a href="mailto:atharv.salvi22@gmail.com" className={`${linkClass} break-all`}>atharv.salvi22@gmail.com</a>
         </div>
-        <p className="text-white/20" style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.75rem" }}>
-          &copy; 2026 Atharv Salvi
-        </p>
       </div>
+      <footer className="pt-6 flex flex-wrap items-center justify-between gap-4 text-white/40" style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem" }}>
+        <p>&copy; {new Date().getFullYear()} Atharv Salvi</p>
+        <span>Built with curiosity.</span>
+      </footer>
     </section>
   );
 }

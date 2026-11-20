@@ -18,7 +18,7 @@ export function BlogPage() {
                     <Link
                         to="/"
                         className="inline-flex items-center gap-2 pl-2 pr-5 py-2 rounded-full border border-black/10 text-black hover:bg-white/90 transition-all bg-white shadow-lg"
-                        style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.85rem", fontWeight: 600 }}
+                        style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", fontWeight: 700 }}
                     >
                         <ArrowLeft className="w-4 h-4 text-black" />
                         Portfolio
@@ -47,7 +47,7 @@ export function BlogPage() {
                     </h1>
                     <p
                         className="text-white/30 mt-4"
-                        style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.85rem", letterSpacing: "0.1em" }}
+                        style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", letterSpacing: "0.1em" }}
                     >
                         Stay tuned for updates
                     </p>

@@ -100,7 +100,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
         </div>
         <span
           className="text-white/30 pt-1"
-          style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.8rem" }}
+          style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem" }}
         >
           {project.year}
         </span>
@@ -111,13 +111,13 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
 
 export function ProjectsSection() {
   return (
-    <section className="px-6 sm:px-10 md:px-16 lg:px-20 py-20 md:py-32">
+    <section id="projects" className="px-6 sm:px-10 md:px-16 lg:px-20 py-10 md:py-14">
       {/* Section header */}
-      <div className="flex items-end justify-between mb-16 md:mb-24">
+      <div className="flex items-end justify-between mb-8 md:mb-12">
         <div>
           <p
             className="text-white/40 mb-3"
-            style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
+            style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
           >
             Selected Work
           </p>
@@ -128,7 +128,7 @@ export function ProjectsSection() {
             Projects
           </h2>
         </div>
-        <p className="text-white/40 hidden md:block" style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.85rem" }}>
+        <p className="text-white/40 hidden md:block" style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}>
           0{projects.length} Project{projects.length !== 1 ? 's' : ''}
         </p>
       </div>
