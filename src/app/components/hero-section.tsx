@@ -1,9 +1,10 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 export function HeroSection() {
+  const reducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
   const [fontSize, setFontSize] = useState(100);
@@ -99,28 +100,37 @@ export function HeroSection() {
       <div className="mt-auto pt-20 sm:pt-28">
         {/* Introduction and a direct route to the work */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10 md:mb-14">
-          <p
+          <motion.p
+            initial={reducedMotion ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: reducedMotion ? 0 : 0.65, delay: reducedMotion ? 0 : 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-[28ch] text-white/70 text-sm sm:text-base md:text-lg leading-relaxed"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             Building backend systems<br className="hidden sm:block" /> and AI-powered tools.
-          </p>
-          <a
+          </motion.p>
+          <motion.a
+            initial={reducedMotion ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: reducedMotion ? 0 : 0.65, delay: reducedMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
             href="#projects"
             className="group inline-flex min-h-11 items-center gap-3 self-start sm:self-auto rounded-sm text-white/70 hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem" }}
           >
             <span className="border-b border-white/25 pb-1 group-hover:border-white/70 transition-colors">Explore my work</span>
             <ArrowDown aria-hidden="true" className="h-4 w-4 motion-safe:transition-transform motion-safe:group-hover:translate-y-1" />
-          </a>
+          </motion.a>
         </div>
 
         {/* Large name at the bottom */}
         <motion.div
           ref={containerRef}
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          initial={reducedMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: reducedMotion ? 0 : 0.65, delay: reducedMotion ? 0 : 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="w-full"
         >
           <h1

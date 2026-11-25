@@ -1,3 +1,5 @@
+import { TextReveal } from "./text-reveal";
+
 const experiences = [
   {
     role: "Technical Head",
@@ -32,6 +34,7 @@ export function ExperienceSection() {
       <ol className="m-0 list-none p-0 flex flex-col gap-8 md:gap-10">
         {experiences.map((experience) => (
           <li key={experience.organization}>
+            <TextReveal>
             <h3 className="text-white leading-relaxed" style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.05rem", fontWeight: 500 }}>
               {experience.role}
             </h3>
@@ -44,6 +47,7 @@ export function ExperienceSection() {
             <p className="max-w-[72ch] text-white/70 mt-3" style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.95rem", lineHeight: 1.8 }}>
               {experience.description}
             </p>
+            </TextReveal>
           </li>
         ))}
       </ol>

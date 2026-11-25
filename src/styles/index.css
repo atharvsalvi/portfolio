@@ -2,6 +2,80 @@
 @import './tailwind.css';
 @import './theme.css';
 
+/* Shared interaction timing; keep layout and cursor tracking instantaneous. */
+:root {
+  --interaction-duration: 220ms;
+  --interaction-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-image-preview img {
+  transition: filter 220ms ease;
+}
+
+.project-image-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: rgb(0 0 0 / 45%);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: clamp(0.65rem, 1vw, 0.85rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+@media (hover: hover) {
+  .project-image-preview:hover img { filter: blur(3px); }
+  .project-image-preview:hover .project-image-hint { opacity: 1; }
+}
+
+.project-image-preview:focus-visible img { filter: blur(3px); }
+.project-image-preview:focus-visible .project-image-hint { opacity: 1; }
+
+:where(a, button, input, textarea, select, article, a svg, button svg) {
+  transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+  transition-duration: var(--interaction-duration);
+  transition-timing-function: var(--interaction-ease);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  button:active { scale: 0.98; }
+}
+
+button { transition-property: color, background-color, border-color, opacity, box-shadow, transform, scale; }
+
+.image-viewer-overlay[data-state='open'],
+.image-viewer-content[data-state='open'] {
+  animation: viewer-fade-in 220ms ease-out both;
+}
+
+.image-viewer-overlay[data-state='closed'],
+.image-viewer-content[data-state='closed'] {
+  animation: viewer-fade-out 180ms ease-in both;
+}
+
+.image-viewer-image { animation: viewer-image-in 260ms var(--interaction-ease) both; }
+
+@keyframes viewer-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes viewer-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes viewer-image-in {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 *,
 *::before,
 *::after {
